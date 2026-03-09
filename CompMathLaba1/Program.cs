@@ -2,19 +2,25 @@
 
 namespace laba1
 {
-
-
     class Program
     {
-        static int Main()
+        static void Main()
         {
-            Console.WriteLine($"{SimpleIters.Lambda(0, 1, 100)} MAXFUNCPX: {SimpleIters.MaxFPXOnAB(0, 1, 100)} X: {SimpleIters.Find(0,1,100)}");
+            float a = 40, b = 41;
+            Console.WriteLine($"Поиск корня на отрезке [{a}, {b}]");
+            Console.WriteLine("Точность: {0}", Constants.accuracy);
+            SimpleIterations.Find(a, b);
+            try
+            {
+                Newton.Find(a, b);
+            }
+            catch { Exception ex; }
+            try
+            {
 
-            Console.WriteLine($"{SimpleIters.Lambda(4, 5, 100)} MAXFUNCPX: {SimpleIters.MaxFPXOnAB(4, 5, 100)} X: {SimpleIters.Find(4, 5, 1000)}");
-
-
-            Console.WriteLine($"{SimpleIters.Lambda(-1, -0.8, 100)} MAXFUNCPX: {SimpleIters.MaxFPXOnAB(-1, -0.8, 100)} X: {SimpleIters.Find(-1, -0.8, 1000)}");
-            return 0;
+                Hords.Find(a, b);
+            }
+            catch { Exception ex; }
         }
     }
 }
